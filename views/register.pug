@@ -1,39 +1,37 @@
 extends layout
 
 block content
+    .alert.alert-dismissible.alert-danger.d-none(id='alert-danger')
+        button(type='button' class='btn-close' data-bs-dismiss='alert')
+        ul(id='errors')
 
-  .alert.alert-dismissible.alert-danger.d-none(id='alert-danger')
-    button(type='button' class='btn-close' data-bs-dismiss='alert')
-    ul(id='errors')
+    .alert.alert-dismissible.alert-success.d-none(id='alert-success')
+        button(type='button' class='btn-close' data-bs-dismiss='alert')
+        p(id='success')
+        
+    h1.text-center= title
+    
+    
+    .container.text-center.d-flex.justify-content-center
+        .col-sm-3
+            form
+                .form-group.p-3
+                    label(for='firstName') First name
+                    input.form-control(id='firstName')
 
-  .alert.alert-dismissible.alert-success.d-none(id='alert-success')
-    button(type='button' class='btn-close' data-bs-dismiss='alert')
-    p(id='success')
+                .form-group.p-3
+                    label(for='lastName') Last name
+                    input.form-control(id='lastName')
 
-  h1.text-center= title
+                .form-group.p-3
+                    label(for='email') Email
+                    input.form-control(id='email')
 
+                .form-group.p-3
+                    label(for='password') Password
+                    input.form-control(id='password' type='password')
 
-
-  .container.text-center.d-flex.justify-content-center
-    .col-sm-3
-        form
-            .form-group.p-3
-                label(for='firstName') First name
-                input.form-control(id='firstName')
-
-            .form-group.p-3
-                label(for='lastName') Last name
-                input.form-control(id='lastName')
-
-            .form-group.p-3
-                label(for='email') Email
-                input.form-control(id='email')
-
-            .form-group.p-3
-                label(for='password') Password
-                input.form-control(id='password' type='password')
-
-            button.btn.btn-primary(type='button' id='signup-btn') Submit
+                button.btn.btn-primary(type='button' id='signup-btn') Submit
 
     
 

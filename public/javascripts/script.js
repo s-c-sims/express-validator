@@ -21,6 +21,8 @@ $(function()
                 $('#alert-danger').addClass('d-none');
                 $('#alert-success').removeClass('d-none');
                 $('#success').html(result);
+
+              
            
             },
             error: (result) => 
@@ -39,6 +41,8 @@ $(function()
                 $('#alert-danger').removeClass('d-none');
 
                 errorsContainer.html(errorsList);
+
+                
             }
 
         });
