@@ -11,13 +11,21 @@ $(function()
             data: 
             {
                 firstName: $('#firstName').val(),
-                lastName: $('#lastName').val()
+                lastName: $('#lastName').val(),
+                email: $('#email').val(),
 
             },
-            success: (result) => alert(result),
+            success: (result) => 
+            {
+                $('#alert').addClass('d-none');
+
+                $('#alert-success').addClass('alert-success');
+                $('#alert-success').removeClass('d-none');
+                $('#success').html(result)
+           
+            },
             error: (result) => 
             {
-      
                 const errors = JSON.parse(result.responseText);
 
                 var errorsContainer = $('#errors');
@@ -28,10 +36,11 @@ $(function()
                 {
                     errorsList += '<li>' + errors[i].msg + '</li>';
                 }
-                
-                $('#error-alert').removeClass('d-none')
-                errorsContainer.html(errorsList);
+                $('#alert-success').addClass('d-none');
+                $('#alert').addClass('alert-danger');
+                $('#alert').removeClass('d-none');
 
+                errorsContainer.html(errorsList);
             }
 
 
