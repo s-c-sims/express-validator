@@ -8,8 +8,9 @@ const errorCheck =
 
     check('email', 'Please enter valid email').isEmail(),
 
+    check('password', 'Password must contain at least 5 characters').isLength({min: 5})
+
         
-    
 ]
 
 module.exports = {errorCheck};

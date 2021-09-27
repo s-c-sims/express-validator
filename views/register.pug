@@ -2,17 +2,13 @@ extends layout
 
 block content
 
-  .alert.alert-dismissible.alert-success.d-none(id='alert-success')
-    button(type='button' class='btn-close')
-    p(id='success')
-
-
-
-  .alert.alert-dismissible.d-none(id='alert')
-    button(type='button' class='btn-close')
+  .alert.alert-dismissible.alert-danger.d-none(id='alert-danger')
+    button(type='button' class='btn-close' data-bs-dismiss='alert')
     ul(id='errors')
 
-
+  .alert.alert-dismissible.alert-success.d-none(id='alert-success')
+    button(type='button' class='btn-close' data-bs-dismiss='alert')
+    p(id='success')
 
   h1.text-center= title
 
@@ -31,7 +27,7 @@ block content
 
             .form-group.p-3
                 label(for='email') Email
-                input.form-control(type='email' id='email')
+                input.form-control(id='email')
 
             .form-group.p-3
                 label(for='password') Password
@@ -39,6 +35,6 @@ block content
 
             button.btn.btn-primary(type='button' id='signup-btn') Submit
 
-       
+    
 
         

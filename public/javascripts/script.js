@@ -13,15 +13,14 @@ $(function()
                 firstName: $('#firstName').val(),
                 lastName: $('#lastName').val(),
                 email: $('#email').val(),
+                password: $('#password').val()
 
             },
             success: (result) => 
             {
-                $('#alert').addClass('d-none');
-
-                $('#alert-success').addClass('alert-success');
+                $('#alert-danger').addClass('d-none');
                 $('#alert-success').removeClass('d-none');
-                $('#success').html(result)
+                $('#success').html(result);
            
             },
             error: (result) => 
@@ -37,16 +36,23 @@ $(function()
                     errorsList += '<li>' + errors[i].msg + '</li>';
                 }
                 $('#alert-success').addClass('d-none');
-                $('#alert').addClass('alert-danger');
-                $('#alert').removeClass('d-none');
+                $('#alert-danger').removeClass('d-none');
 
                 errorsContainer.html(errorsList);
             }
 
-
         });
 
       });
+
+      $('.btn-close').click( () =>
+      {
+          $('#alert-danger').addClass('d-none');
+          $('#alert-success').addClass('d-none');
+
+      });
+
+     
       
 
 });
